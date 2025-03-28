@@ -26,7 +26,7 @@ import com.swing_back_end.swing.core.User.dto.UserRequestDTO;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("v1/user")
+@RequestMapping("/v1/user")
 public class UserController {
 
   private final UserService userService;
