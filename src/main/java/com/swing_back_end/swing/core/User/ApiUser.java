@@ -46,9 +46,8 @@ public class ApiUser extends BaseModel {
   @NotNull
   private String password;
 
-  private int phone;
+  private long phone;
 
-  @NotEmpty
   @NotNull
   private Instant birthdate;
 

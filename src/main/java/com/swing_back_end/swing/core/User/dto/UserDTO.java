@@ -17,6 +17,6 @@ public class UserDTO {
   private String document;
   private DocumentTypes documentType;
   private String email;
-  private int phone;
+  private long phone;
   private Instant birthdate;
 }
