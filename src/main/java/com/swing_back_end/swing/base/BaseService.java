@@ -16,13 +16,16 @@ public abstract class BaseService<T, DTO> {
   @Getter
   private final Class<T> modelType;
 
-  public abstract List<DTO> findAllById(Long id);
-
-  public abstract DTO findById(Long id);
+  public abstract List<?> findAllById(Long id);
 
   public BaseService(BaseRepository<T, DTO> baseRepository, Class<T> modelType) {
     this.baseRepository = baseRepository;
     this.modelType = modelType;
+  }
+
+  public DTO findById(Long id) {
+    Optional<DTO> optional = baseRepository.findByIdEqualsAndActiveIsTrue(id);
+    return optional.orElseThrow(() -> new ObjectNotFoundException(modelType.getName(), id));
   }
 
   public T findOriginalElementsById(Long id) {
@@ -54,9 +57,9 @@ public abstract class BaseService<T, DTO> {
     if (object != null) {
       BeanUtils.copyProperties(false, object, "active");
       save(object);
-      return "Elemento desactivado correctamente.";
+      return id +"deleted successfully.";
     }
-    return "Elemento no encontrado.";
+    return "Elment not found.";
   }
 
 }
