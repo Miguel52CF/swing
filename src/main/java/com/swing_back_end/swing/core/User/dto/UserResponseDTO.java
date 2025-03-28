@@ -11,7 +11,7 @@ public class UserResponseDTO extends UserDTO {
   private Long id;
 
   public UserResponseDTO(Long id, String firstName, String middleName, String lastName, String secondLastName,
-      String document, DocumentTypes documentType, String email, int phone, Instant birthdate) {
+      String document, DocumentTypes documentType, String email, long phone, Instant birthdate) {
     super(firstName, middleName, lastName, secondLastName, document, documentType, email, phone, birthdate);
     this.id = id;
   }

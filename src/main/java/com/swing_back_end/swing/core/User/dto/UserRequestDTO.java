@@ -12,7 +12,7 @@ public class UserRequestDTO extends UserDTO {
   private String password;
 
   public UserRequestDTO(String firstName, String middleName, String lastName, String secondLastName,
-      String document, DocumentTypes documentType, String email, int phone, Instant birthdate,
+      String document, DocumentTypes documentType, String email, long phone, Instant birthdate,
       String password) {
     super(firstName, middleName, lastName, secondLastName, document, documentType, email, phone, birthdate);
     this.password = password;
